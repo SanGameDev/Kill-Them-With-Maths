@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 250ca9e46452ff846a1e5e965227c26f, type: 3}
+  m_Name: Adding#6
+  m_EditorClassIdentifier: 
+  problemToSolve: There are 12 pencils on the teacher's desk and 3 more on the bookshelf.
+    How many pencils are there in the classroom?
+  options: 00000000000000000000000000000000
+  correctOption: 0
