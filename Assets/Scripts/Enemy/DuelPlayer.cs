@@ -26,7 +26,7 @@ public class DuelPlayer : MonoBehaviour
             {
                 if (hit.transform == player && enemyMovement.playerSpottedCheked)
                 {
-                    
+                    this.GetComponent<Dueling>().StartingBattle();
                 }
                 else
                 {
