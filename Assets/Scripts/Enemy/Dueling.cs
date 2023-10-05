@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Dueling : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Dueling : MonoBehaviour
     public GameObject canvas;
     public TMP_Text problemText;
     public List<Button> buttons;
+    public GameObject generalPlayer;
 
     int randomDificulty;
     int randomProblem;
@@ -26,6 +28,9 @@ public class Dueling : MonoBehaviour
     public void StartingBattle()
     {
         canvas.SetActive(true);
+        GetComponent<NavMeshAgent>().speed = 0;
+        generalPlayer.GetComponent<GeneralPlayer>().SetTagToDueling();
+        generalPlayer.GetComponent<PlayerMovementScript>().enabled = false;
         problemText.text = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].problemToSolve;
         for (int i = 0; i < buttons.Count; i++)
         {
