@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public float maxAngle = 90f;
     public float maxDistance = 35f;
     public float moveRange = 10f;
+    public GeneralPlayer generalPlayer;
     [HideInInspector]public bool playerSpottedCheked;
 
     bool startPatrolling;
@@ -26,11 +27,13 @@ public class EnemyMovement : MonoBehaviour
         if(playerSpottedCheked)
         {
             agent.SetDestination(playerPosition);
+            generalPlayer.SetTagToDueling();
             startPatrolling = false;
         }
         else if(!playerSpottedCheked && !startPatrolling)
         {
             agent.SetDestination(lastPositionOfPlayer);
+            generalPlayer.SetTagBackToPlayer();
         }
 
         if(!agent.pathPending && agent.remainingDistance < 0.5f)

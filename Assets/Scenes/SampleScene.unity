@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 367364399}
   - component: {fileID: 367364398}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: ButtonTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1416,7 +1416,7 @@ GameObject:
   - component: {fileID: 453341864}
   - component: {fileID: 453341863}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: ButtonThree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 717271483}
   - component: {fileID: 717271482}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: ButtonFour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3140,8 +3140,9 @@ MonoBehaviour:
   agent: {fileID: 1281091191}
   numberOfRays: 15
   maxAngle: 75
-  maxDistance: 20
+  maxDistance: 40
   moveRange: 10
+  generalPlayer: {fileID: 0}
   playerSpottedCheked: 0
 --- !u!136 &1281091193
 CapsuleCollider:
@@ -4099,7 +4100,7 @@ GameObject:
   - component: {fileID: 1720439032}
   - component: {fileID: 1720439031}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ButtonOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4484,6 +4485,7 @@ GameObject:
   - component: {fileID: 2144566834}
   - component: {fileID: 2144566833}
   - component: {fileID: 2144566835}
+  - component: {fileID: 2144566836}
   m_Layer: 6
   m_Name: FPCharacter
   m_TagString: Player
@@ -4517,7 +4519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144566832}
   m_LocalRotation: {x: -0, y: 0.9962522, z: -0, w: 0.08649653}
-  m_LocalPosition: {x: 4.64, y: 4.13, z: -6.75}
+  m_LocalPosition: {x: 5.1, y: 4.13, z: 3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4548,3 +4550,15 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &2144566836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144566832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e241a2c2c8be86949a0341120da43a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

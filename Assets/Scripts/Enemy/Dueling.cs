@@ -19,18 +19,18 @@ public class Dueling : MonoBehaviour
 
     void Start()
     {
-        randomDificulty = Random.Range(0, listOfAddingProblems.dificulty.Count - 1);
-        randomProblem = Random.Range(0, listOfAddingProblems.dificulty[randomDificulty].problems.Count - 1);
+        randomDificulty = Random.Range(0, listOfAddingProblems.dificulty.Count);
+        randomProblem = Random.Range(0, listOfAddingProblems.dificulty[randomDificulty].problems.Count);
     }
 
     public void StartingBattle()
     {
         canvas.SetActive(true);
-        Time.timeScale = 0.3f;
         problemText.text = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].problemToSolve;
         for (int i = 0; i < buttons.Count; i++)
         {
-            buttons[i].GetComponentInChildren<TMP_Text>().text = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options[GetRandomElement()].ToString();            
+            buttons[i].GetComponentInChildren<TMP_Text>().text = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options[GetRandomElement()].ToString();
+            Debug.Log(buttons[i].name);            
         }
     }
 
@@ -41,17 +41,19 @@ public class Dueling : MonoBehaviour
             Debug.LogWarning("Todos los elementos han sido seleccionados.");
             return -1;
         }
-
-        int randomIndex;
-        do
+        else
         {
-            randomIndex = Random.Range(0, listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options.Count);
-        }
-        while (usedIndices.Contains(randomIndex));
+            int randomIndex;
+            do
+            {
+                randomIndex = Random.Range(0, listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options.Count);
+            }
+            while (usedIndices.Contains(randomIndex));
 
-        usedIndices.Add(randomIndex);
-        selectedElement = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options[randomIndex];
-        return selectedElement;
+            usedIndices.Add(randomIndex);
+            selectedElement = listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].options[randomIndex];
+            return selectedElement;
+        }
     }
 
     public void ButtomChose1()
@@ -59,7 +61,6 @@ public class Dueling : MonoBehaviour
         if(buttons[0].GetComponentInChildren<TMP_Text>().text == listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].correctOption.ToString())
         {
             canvas.SetActive(false);
-            Time.timeScale = 1f;
             Destroy(gameObject, 0.5f);
         }
     }
@@ -69,7 +70,6 @@ public class Dueling : MonoBehaviour
         if(buttons[1].GetComponentInChildren<TMP_Text>().text == listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].correctOption.ToString())
         {
             canvas.SetActive(false);
-            Time.timeScale = 1f;
             Destroy(gameObject, 0.5f);
         }
     }
@@ -79,7 +79,6 @@ public class Dueling : MonoBehaviour
         if(buttons[2].GetComponentInChildren<TMP_Text>().text == listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].correctOption.ToString())
         {
             canvas.SetActive(false);
-            Time.timeScale = 1f;
             Destroy(gameObject, 0.5f);
         }
     }
@@ -89,7 +88,6 @@ public class Dueling : MonoBehaviour
         if(buttons[3].GetComponentInChildren<TMP_Text>().text == listOfAddingProblems.dificulty[randomDificulty].problems[randomProblem].correctOption.ToString())
         {
             canvas.SetActive(false);
-            Time.timeScale = 1f;
             Destroy(gameObject, 0.5f);
         }
     }
